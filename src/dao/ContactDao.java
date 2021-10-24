@@ -26,7 +26,8 @@ public class ContactDao {
 		}
 	}
 
-	Map<String, Contact> contacts = new HashMap<String, Contact>();
+	private Map<String, Contact> contacts = new HashMap<String, Contact>();
+	private String filePath = "contacts.txt";
 
 	public void addContact() {
 
@@ -97,11 +98,11 @@ public class ContactDao {
 	}
 
 	public void loadContacts() {
-		this.contacts = File.loadContacts("contacts.txt");
+		this.contacts = File.loadContacts(this.filePath);
 	}
 
 	public void saveContacts() {
-		File.saveContacts(this.contacts, "contacts.txt");
+		File.saveContacts(this.contacts, this.filePath);
 	}
 
 }
