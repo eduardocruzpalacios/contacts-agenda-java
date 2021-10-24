@@ -52,7 +52,7 @@ public class ContactDao {
 			}
 			Relationship relationship = Relationship.valueOf(relationshipString);
 			contact.setRelationship(relationship);
-			contacts.put(contact.getName(), contact);
+			this.contacts.put(contact.getName(), contact);
 			logger.info(contact);
 			Out.printString("Contact added successfully");
 
@@ -64,19 +64,19 @@ public class ContactDao {
 
 	public void listContacts() {
 		Out.printString("\n***** ALL CONTACTS *****");
-		for (Object object : contacts.keySet()) {
-			System.out.println(object + " -> " + contacts.get(object));
+		for (Object object : this.contacts.keySet()) {
+			System.out.println(object + " -> " + this.contacts.get(object));
 		}
 	}
 
 	public void listContactsBeginningByChar() {
 		String userChar = In.getChar("Write a char");
 		Out.printString("\n***** CONTACTS BEGINNING BY " + userChar + " *****");
-		for (Object object : contacts.keySet()) {
+		for (Object object : this.contacts.keySet()) {
 			String key = (String) object;
 			String firstChar = this.contacts.get(object).getName();
 			if (userChar.toLowerCase().charAt(0) == firstChar.toLowerCase().charAt(0)) {
-				Contact value = contacts.get(key);
+				Contact value = this.contacts.get(key);
 				System.out.println(key + " -> " + value);
 			}
 		}
@@ -90,7 +90,7 @@ public class ContactDao {
 			String key = (String) object;
 			Relationship objectRelationship = this.contacts.get(object).getRelationship();
 			if (objectRelationship.equals(relationship)) {
-				Contact value = contacts.get(key);
+				Contact value = this.contacts.get(key);
 				System.out.println(key + " -> " + value);
 			}
 		}
