@@ -37,26 +37,35 @@ public class ContactDao {
 		contact.setName(In.getString("Choose a name"));
 		contact.setPhone(In.getString("Write the phone"));
 
-		Menu.relationshipListed();
-		String relationshipString = In.getString("Choose a group").toUpperCase();
+		boolean salir = false;
+		String relationshipString = "";
 
-		try {
-			int count = 0;
-			for (Relationship relationship : Relationship.BY_ID.values()) {
-				count++;
-				if (relationship.toString().equals(relationshipString)) {
-					break;
+		do {
+
+			Menu.relationshipListed();
+			relationshipString = In.getString("Choose a group").toUpperCase();
+
+			try {
+				int count = 0;
+				for (Relationship relationship : Relationship.BY_ID.values()) {
+					count++;
+					if (relationship.toString().equals(relationshipString)) {
+						salir = true;
+						break;
+					}
+					if (count == Relationship.BY_ID.size()) {
+						throw new RelationshipNotFoundException();
+					}
 				}
-				if (count == Relationship.BY_ID.size()) {
-					throw new RelationshipNotFoundException();
-				}
+			} catch (RelationshipNotFoundException e) {
+				Out.printString("Relationship not matched, try again!");
+				logger.warn(e + " " + relationshipString);
 			}
-			Relationship relationship = Relationship.valueOf(relationshipString);
-			contact.setRelationship(relationship);
 
-		} catch (RelationshipNotFoundException e) {
-			logger.warn(e + " " + relationshipString);
-		}
+		} while (!salir);
+
+		Relationship relationship = Relationship.valueOf(relationshipString);
+		contact.setRelationship(relationship);
 		contacts.put(contact.getName(), contact);
 		logger.info(contact);
 		Out.printString("Contact added successfully");
