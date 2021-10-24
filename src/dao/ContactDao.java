@@ -3,10 +3,8 @@ package dao;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import control.Flow;
 import exceptions.RelationshipNotFoundException;
 import gui.Menu;
 import model.Contact;
@@ -18,13 +16,6 @@ import tools.Out;
 public class ContactDao {
 
 	private static Logger logger;
-	static {
-		try {
-			logger = LogManager.getLogger(Flow.class);
-		} catch (Throwable e) {
-			System.out.println("Logger Don't work");
-		}
-	}
 
 	private Map<String, Contact> contacts = new HashMap<String, Contact>();
 	private String filePath = "contacts.txt";
