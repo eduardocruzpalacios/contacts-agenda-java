@@ -17,8 +17,8 @@ public class ContactDao {
 
 	private static Logger logger;
 
-	private Map<String, Contact> contacts = new HashMap<String, Contact>();
-	private String filePath = "contacts.txt";
+	private static Map<String, Contact> contacts = new HashMap<String, Contact>();
+	final static private String FILE_PATH = "contacts.txt";
 
 	public void addContact() {
 
@@ -44,31 +44,30 @@ public class ContactDao {
 			}
 			Relationship relationship = Relationship.valueOf(relationshipString);
 			contact.setRelationship(relationship);
-			this.contacts.put(contact.getName(), contact);
+			contacts.put(contact.getName(), contact);
 			logger.info(contact);
 			Out.printString("Contact added successfully");
 
 		} catch (RelationshipNotFoundException e) {
 			logger.warn(e + " " + relationshipString);
 		}
-
 	}
 
 	public void listContacts() {
 		Out.printString("\n***** ALL CONTACTS *****");
-		for (Object object : this.contacts.keySet()) {
-			System.out.println(object + " -> " + this.contacts.get(object));
+		for (Object object : contacts.keySet()) {
+			System.out.println(object + " -> " + contacts.get(object));
 		}
 	}
 
 	public void listContactsBeginningByChar() {
 		String userChar = In.getChar("Write a char");
 		Out.printString("\n***** CONTACTS BEGINNING BY " + userChar + " *****");
-		for (Object object : this.contacts.keySet()) {
+		for (Object object : contacts.keySet()) {
 			String key = (String) object;
-			String firstChar = this.contacts.get(object).getName();
+			String firstChar = contacts.get(object).getName();
 			if (userChar.toLowerCase().charAt(0) == firstChar.toLowerCase().charAt(0)) {
-				Contact value = this.contacts.get(key);
+				Contact value = contacts.get(key);
 				System.out.println(key + " -> " + value);
 			}
 		}
@@ -78,22 +77,22 @@ public class ContactDao {
 		Menu.relationshipListed();
 		Relationship relationship = Relationship.valueOf(In.getString("Choose a group").toUpperCase());
 		Out.printString("\n***** CONTACTS FROM GROUP " + relationship + " *****");
-		for (Object object : this.contacts.keySet()) {
+		for (Object object : contacts.keySet()) {
 			String key = (String) object;
-			Relationship objectRelationship = this.contacts.get(object).getRelationship();
+			Relationship objectRelationship = contacts.get(object).getRelationship();
 			if (objectRelationship.equals(relationship)) {
-				Contact value = this.contacts.get(key);
+				Contact value = contacts.get(key);
 				System.out.println(key + " -> " + value);
 			}
 		}
 	}
 
 	public void loadContacts() {
-		this.contacts = File.loadContacts(this.filePath);
+		contacts = File.loadContacts(FILE_PATH);
 	}
 
 	public void saveContacts() {
-		File.saveContacts(this.contacts, this.filePath);
+		File.saveContacts(contacts, FILE_PATH);
 	}
 
 }
