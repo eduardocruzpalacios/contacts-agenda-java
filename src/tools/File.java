@@ -13,15 +13,11 @@ import model.Relationship;
 
 public class File {
 
-	public static Map<String, Contact> loadContacts(String path) {
-
+	public static Map<String, Contact> getMapContact(String path) {
 		Map<String, Contact> contacts = new HashMap<String, Contact>();
 		String fileLine;
-
 		try {
-
 			BufferedReader reader = new BufferedReader(new FileReader(path));
-
 			while ((fileLine = reader.readLine()) != null) {
 				Contact contact = new Contact();
 				String[] contactAttribute = new String[3];
@@ -34,29 +30,22 @@ public class File {
 			}
 			reader.close();
 		} catch (IOException e) {
-			System.out.println(e);
+			Log.logger.error(e);
 		}
-
 		return contacts;
 	}
 
-	public static void saveContacts(Map<String, Contact> contacts, String path) {
-
+	public static void writeMapContact(Map<String, Contact> contacts, String path) {
 		try {
-
 			BufferedWriter writer = new BufferedWriter(new FileWriter(path));
-
 			for (Object object : contacts.keySet()) {
 				Contact contact = contacts.get(object);
 				writer.write(contact.getName() + "," + contact.getPhone() + "," + contact.getRelationship());
 				writer.newLine();
 			}
-
 			writer.close();
-		}
-
-		catch (IOException e) {
-			System.out.println(e);
+		} catch (IOException e) {
+			Log.logger.error(e);
 		}
 	}
 

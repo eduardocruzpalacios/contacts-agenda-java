@@ -3,114 +3,55 @@ package dao;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import control.Flow;
-import exceptions.RelationshipNotFoundException;
-import gui.Menu;
 import model.Contact;
 import model.Relationship;
 import tools.File;
-import tools.In;
-import tools.Out;
 
 public class ContactDao {
-
-	private static Logger logger;
-	static {
-		try {
-			logger = LogManager.getLogger(Flow.class);
-		} catch (Throwable e) {
-			System.out.println("Logger Don't work");
-		}
-	}
 
 	private static Map<String, Contact> contacts = new HashMap<String, Contact>();
 	final static private String FILE_PATH = "contacts.txt";
 
-	public void addContact() {
-
-		Out.printString("First, let's create a new contact");
-		Contact contact = new Contact();
-
-		contact.setName(In.getString("Choose a name"));
-		contact.setPhone(In.getString("Write the phone"));
-
-		boolean salir = false;
-		String relationshipString = "";
-
-		do {
-
-			Menu.relationshipListed();
-			relationshipString = In.getString("Choose a group").toUpperCase();
-
-			try {
-				int count = 0;
-				for (Relationship relationship : Relationship.BY_ID.values()) {
-					count++;
-					if (relationship.toString().equals(relationshipString)) {
-						salir = true;
-						break;
-					}
-					if (count == Relationship.BY_ID.size()) {
-						throw new RelationshipNotFoundException();
-					}
-				}
-			} catch (RelationshipNotFoundException e) {
-				Out.printString("Relationship not matched, try again!");
-				logger.warn(e + " " + relationshipString);
-			}
-
-		} while (!salir);
-
-		Relationship relationship = Relationship.valueOf(relationshipString);
-		contact.setRelationship(relationship);
+	public void addContact(Contact contact) {
 		contacts.put(contact.getName(), contact);
-		logger.info(contact);
-		Out.printString("Contact added successfully");
 	}
 
-	public void listContacts() {
-		Out.printString("\n***** ALL CONTACTS *****");
-		for (Object object : contacts.keySet()) {
-			System.out.println(object + " -> " + contacts.get(object));
-		}
+	public Map<String, Contact> getAll() {
+		return contacts;
 	}
 
-	public void listContactsBeginningByChar() {
-		String userChar = In.getChar("Write a char");
-		Out.printString("\n***** CONTACTS BEGINNING BY " + userChar + " *****");
-		for (Object object : contacts.keySet()) {
-			String key = (String) object;
-			String firstChar = contacts.get(object).getName();
-			if (userChar.toLowerCase().charAt(0) == firstChar.toLowerCase().charAt(0)) {
-				Contact value = contacts.get(key);
-				System.out.println(key + " -> " + value);
+	public boolean existContact(String name) {
+		return contacts.containsKey(name);
+	}
+
+	public Map<String, Contact> getContactsBeginningByCharacter(char character) {
+		Map<String, Contact> contactsBeginningByCharacter = new HashMap<String, Contact>();
+		char firstChar;
+		for (String key : contacts.keySet()) {
+			firstChar = contacts.get(key).getName().charAt(0);
+			if (firstChar == character) {
+				contactsBeginningByCharacter.put(key, contacts.get(key));
 			}
 		}
+		return contactsBeginningByCharacter;
 	}
 
-	public void listContactsFromRelationship() {
-		Menu.relationshipListed();
-		Relationship relationship = Relationship.valueOf(In.getString("Choose a group").toUpperCase());
-		Out.printString("\n***** CONTACTS FROM GROUP " + relationship + " *****");
-		for (Object object : contacts.keySet()) {
-			String key = (String) object;
-			Relationship objectRelationship = contacts.get(object).getRelationship();
-			if (objectRelationship.equals(relationship)) {
-				Contact value = contacts.get(key);
-				System.out.println(key + " -> " + value);
+	public Map<String, Contact> getContactsWithRelationship(Relationship relationship) {
+		Map<String, Contact> contactsWithRelationsip = new HashMap<String, Contact>();
+		for (String key : contacts.keySet()) {
+			if (contacts.get(key).getRelationship().equals(relationship)) {
+				contactsWithRelationsip.put(key, contacts.get(key));
 			}
 		}
+		return contactsWithRelationsip;
 	}
 
-	public void loadContacts() {
-		contacts = File.loadContacts(FILE_PATH);
+	public void loadAll() {
+		contacts = File.getMapContact(FILE_PATH);
 	}
 
-	public void saveContacts() {
-		File.saveContacts(contacts, FILE_PATH);
+	public void saveAll() {
+		File.writeMapContact(contacts, FILE_PATH);
 	}
 
 }

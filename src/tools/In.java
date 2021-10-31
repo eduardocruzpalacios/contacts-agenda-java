@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class In {
 
 	public static String getString(String msg) {
-		Out.printString(msg);
+		Print.str(msg);
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		String getString = scanner.nextLine();
@@ -20,12 +20,13 @@ public class In {
 		return getChar;
 	}
 
-	public static int getInt() {
+	public static int getInt(String msg) {
+		System.out.println(msg);
 		int getInt;
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		while (scanner.hasNextInt() == false) {
-			Out.printString("enter an integer, ¡try again!");
+			Print.str(msg);
 			scanner.next();
 		}
 		getInt = scanner.nextInt();
@@ -36,8 +37,7 @@ public class In {
 		boolean exit = false;
 		int getIntBetween = 0;
 		while (!exit) {
-			Out.printString(msg);
-			getIntBetween = In.getInt();
+			getIntBetween = In.getInt(msg);
 			if (getIntBetween >= num1 && getIntBetween <= num2) {
 				exit = true;
 			}

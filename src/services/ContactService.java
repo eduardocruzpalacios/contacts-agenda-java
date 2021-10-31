@@ -2,16 +2,16 @@ package services;
 
 public interface ContactService {
 
-	public void add();
+	public void create();
 
 	public void findAll();
 
 	public void filterByFirstLetter();
 
-	public void filterByGroup();
+	public void filterByRelationship();
 
-	public void load();
+	public void importAll();
 
-	public void save();
+	public void exportAll();
 
 }
