@@ -1,24 +1,24 @@
 package gui;
 
-import tools.Out;
+import tools.Print;
 
 public class Window {
 
 	public static void start() {
-		Out.printString("");
-		Out.printString("****************************************************");
-		Out.printString("*                                                  *");
-		Out.printString("*                      AGENDA                      *");
-		Out.printString("*                                                  *");
-		Out.printString("****************************************************");
+		Print.str("");
+		Print.str("****************************************************");
+		Print.str("*                                                  *");
+		Print.str("*                      AGENDA                      *");
+		Print.str("*                                                  *");
+		Print.str("****************************************************");
 	}
 
 	public static void exit() {
-		Out.printString("");
-		Out.printString("***************************************************");
-		Out.printString("*                                                 *");
-		Out.printString("*                    ¡BYE BYE!                    *");
-		Out.printString("*                                                 *");
-		Out.printString("***************************************************");
+		Print.str("");
+		Print.str("***************************************************");
+		Print.str("*                                                 *");
+		Print.str("*                    ¡BYE BYE!                    *");
+		Print.str("*                                                 *");
+		Print.str("***************************************************");
 	}
 }
