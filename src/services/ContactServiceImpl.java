@@ -30,7 +30,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void findAll() {
-		Print.str("\n***** ALL CONTACTS *****");
+		Print.str("\nALL CONTACTS\n");
 		Print.mapContact(this.contactDao.getAll());
 		Log.logger.info("FIND ALL CONTACTS");
 	}
@@ -38,7 +38,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void filterByFirstLetter() {
 		String userChar = In.getChar("Write a char");
-		Print.str("\n***** CONTACTS BEGINNING BY " + userChar + " *****");
+		Print.str("\nCONTACTS BEGINNING BY " + userChar + "\n");
 		Print.mapContact(this.contactDao.getContactsBeginningByCharacter(userChar.charAt(0)));
 		Log.logger.info("FIND ALL CONTACTS BEGINNIG BY " + userChar);
 	}
@@ -46,7 +46,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void filterByRelationship() {
 		Relationship relationship = Relationship.getRelationship("Choose a Relationship");
-		Print.str("\n***** CONTACTS FROM GROUP " + relationship + " *****");
+		Print.str("\nCONTACTS FROM RELANTIONSHIP " + relationship + "\n");
 		Print.mapContact(this.contactDao.getContactsWithRelationship(relationship));
 		Log.logger.info("FIND ALL CONTACTS WITH RELATIONSHIP " + relationship);
 	}

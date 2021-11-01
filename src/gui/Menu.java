@@ -6,7 +6,7 @@ import tools.Print;
 public class Menu {
 
 	public static void main() {
-		Print.str("\n***** MAIN MENU *****\n");
+		Print.header("MAIN MENU");
 		Print.str("1. Add a new contact");
 		Print.str("2. List all contacts");
 		Print.str("3. List contacts beginning for a char");
@@ -15,7 +15,7 @@ public class Menu {
 	}
 
 	public static void relationshipListed() {
-		Print.str("\n***** RELATIONSHIP *****\n");
+		Print.header("RELATIONSHIP");
 		for (Relationship relationship : Relationship.BY_ID.values()) {
 			Print.enums(relationship);
 		}
