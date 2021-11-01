@@ -16,8 +16,8 @@ Contacts agenda built with Java 11.
 Given an agenda with contacts:
  - List all contacts
  - Add a new contact
- - Filter contacts by their first letter
- - Filter contacts by their group
+ - Filter contacts by first letter
+ - Filter contacts by relationship
  - Save changes in the agenda when closing the application
  - Load contacts on the agenda when starting the application
 
