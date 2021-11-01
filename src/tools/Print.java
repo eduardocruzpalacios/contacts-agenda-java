@@ -18,4 +18,8 @@ public class Print {
 		map.forEach((String, Contact) -> System.out.println(Contact));
 	}
 
+	public static void header(String header) {
+		Print.str("\n***** " + header + " *****\n");
+	}
+
 }
