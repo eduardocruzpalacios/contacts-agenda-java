@@ -36,6 +36,7 @@ public class Flow {
 				break;
 			}
 		} while (!exit);
+		In.closeScanner();
 		contactServiceImpl.exportAll();
 		Window.exit();
 	}

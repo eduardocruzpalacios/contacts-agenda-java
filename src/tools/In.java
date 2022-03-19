@@ -4,27 +4,26 @@ import java.util.Scanner;
 
 public class In {
 
+	private static Scanner scanner;
+
 	public static String getString(String msg) {
 		Print.str(msg);
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
-		String getString = scanner.nextLine();
-		return getString;
+		scanner = new Scanner(System.in);
+		return scanner.nextLine();
 	}
 
-	public static String getChar(String msg) {
-		String getChar;
+	public static String getStringOf1Length(String msg) {
+		String getStringOf1Length;
 		do {
-			getChar = getString(msg);
-		} while (getChar.length() != 1);
-		return getChar;
+			getStringOf1Length = getString(msg);
+		} while (getStringOf1Length.length() != 1);
+		return getStringOf1Length;
 	}
 
 	public static int getInt(String msg) {
 		System.out.println(msg);
 		int getInt;
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 		while (scanner.hasNextInt() == false) {
 			Print.str(msg);
 			scanner.next();
@@ -43,6 +42,10 @@ public class In {
 			}
 		}
 		return getIntBetween;
+	}
+
+	public static void closeScanner() {
+		scanner.close();
 	}
 
 }

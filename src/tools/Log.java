@@ -7,14 +7,6 @@ import control.Flow;
 
 public class Log {
 
-	public static Logger logger;
-
-	static {
-		try {
-			logger = LogManager.getLogger(Flow.class);
-		} catch (Throwable e) {
-			System.out.println("Logger Don't work");
-		}
-	}
+	public static Logger logger = LogManager.getLogger(Flow.class);
 
 }
