@@ -9,8 +9,7 @@ public class In {
 	public static String getString(String msg) {
 		Print.str(msg);
 		scanner = new Scanner(System.in);
-		String getString = scanner.nextLine();
-		return getString;
+		return scanner.nextLine();
 	}
 
 	public static String getChar(String msg) {
@@ -24,8 +23,7 @@ public class In {
 	public static int getInt(String msg) {
 		System.out.println(msg);
 		int getInt;
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 		while (scanner.hasNextInt() == false) {
 			Print.str(msg);
 			scanner.next();
