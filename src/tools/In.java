@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class In {
 
+	private static Scanner scanner;
+
 	public static String getString(String msg) {
 		Print.str(msg);
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 		String getString = scanner.nextLine();
 		return getString;
 	}
@@ -43,6 +44,10 @@ public class In {
 			}
 		}
 		return getIntBetween;
+	}
+
+	public static void closeScanner() {
+		scanner.close();
 	}
 
 }
