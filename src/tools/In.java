@@ -12,12 +12,12 @@ public class In {
 		return scanner.nextLine();
 	}
 
-	public static String getChar(String msg) {
-		String getChar;
+	public static String getStringOf1Length(String msg) {
+		String getStringOf1Length;
 		do {
-			getChar = getString(msg);
-		} while (getChar.length() != 1);
-		return getChar;
+			getStringOf1Length = getString(msg);
+		} while (getStringOf1Length.length() != 1);
+		return getStringOf1Length;
 	}
 
 	public static int getInt(String msg) {
