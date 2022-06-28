@@ -5,12 +5,10 @@ import gui.Menu;
 import model.Relationship;
 import tools.In;
 import tools.Log;
-import tools.Print;
 
 public class RelationshipForm {
 
 	public static Relationship getRelationship() {
-		Print.str("RELATIONSHIP FORM");
 		boolean exit = false;
 		String relationshipString;
 		do {
