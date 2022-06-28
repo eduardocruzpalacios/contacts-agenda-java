@@ -20,10 +20,6 @@ public class ContactDao {
 		return contacts;
 	}
 
-	public boolean existContact(String name) {
-		return contacts.containsKey(name);
-	}
-
 	public Map<String, Contact> getContactsBeginningByCharacter(char character) {
 		Map<String, Contact> contactsBeginningByCharacter = new HashMap<String, Contact>();
 		char firstChar;
