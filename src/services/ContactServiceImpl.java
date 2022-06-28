@@ -33,7 +33,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void filterByFirstLetter() {
-		String userChar = In.getStringOf1Length("Write a char");
+		String userChar = In.getStringOf1Length("char:");
 		Print.str("\nCONTACTS BEGINNING BY " + userChar + "\n");
 		Print.mapContact(this.contactDao.getContactsBeginningByCharacter(userChar.charAt(0)));
 		Log.logger.info("FIND ALL CONTACTS BEGINNIG BY " + userChar);
