@@ -15,13 +15,9 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void create() {
 		Contact contact = ContactForm.getContact();
-		if (!this.contactDao.existContact(contact.getName())) {
-			this.contactDao.addContact(contact);
-			Print.str("Contact added successfully");
-			Log.logger.info("NEW CONTACT: " + contact);
-		} else {
-			Print.str("Contact already existed and not added");
-		}
+		this.contactDao.addContact(contact);
+		Print.str("Contact added successfully");
+		Log.logger.info("NEW CONTACT: " + contact);
 	}
 
 	@Override
