@@ -35,7 +35,8 @@ public class ContactDao {
 	public Map<String, Contact> getContactsWithRelationship(Relationship relationship) {
 		Map<String, Contact> contactsWithRelationsip = new HashMap<String, Contact>();
 		for (String key : contacts.keySet()) {
-			if (contacts.get(key).getRelationship().equals(relationship)) {
+			Relationship contactRelationship = contacts.get(key).getRelationship();
+			if (contactRelationship.equals(relationship)) {
 				contactsWithRelationsip.put(key, contacts.get(key));
 			}
 		}
