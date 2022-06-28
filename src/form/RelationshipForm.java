@@ -14,7 +14,7 @@ public class RelationshipForm {
 		boolean exit = false;
 		String relationshipString;
 		do {
-			Menu.relationshipListed();
+			Menu.relationship();
 			relationshipString = In.getString("Relationship:").toUpperCase();
 			try {
 				int count = 0;
