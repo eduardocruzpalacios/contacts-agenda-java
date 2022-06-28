@@ -21,8 +21,4 @@ public enum Relationship {
 		}
 	}
 
-	public static Relationship valueOfId(int id) {
-		return BY_ID.get(id);
-	}
-
 }
