@@ -1,6 +1,10 @@
 package services;
 
+import java.util.Map;
+
 import dao.ContactDao;
+import form.ContactForm;
+import form.RelationshipForm;
 import model.Contact;
 import model.Relationship;
 import tools.In;
@@ -13,41 +17,35 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void create() {
-		Print.str("Let's create a new contact");
-		Contact contact = new Contact();
-		contact.setName(In.getString("Choose a name"));
-		contact.setPhone(In.getString("Write the phone"));
-		Relationship relationship = Relationship.getRelationship("Choose a Relationship");
-		contact.setRelationship(relationship);
-		if (!this.contactDao.existContact(contact.getName())) {
-			this.contactDao.addContact(contact);
-			Print.str("Contact added successfully");
-			Log.logger.info("NEW CONTACT: " + contact);
-		} else {
-			Print.str("Contact already existed and not added");
-		}
+		Contact contact = ContactForm.getContact();
+		this.contactDao.addContact(contact);
+		Print.str("Contact added successfully");
+		Log.logger.info("NEW CONTACT: " + contact);
 	}
 
 	@Override
 	public void findAll() {
 		Print.str("\nALL CONTACTS\n");
-		Print.mapContact(this.contactDao.getAll());
+		Map<String, Contact> contacts = this.contactDao.getAll();
+		Print.mapContact(contacts);
 		Log.logger.info("FIND ALL CONTACTS");
 	}
 
 	@Override
 	public void filterByFirstLetter() {
-		String userChar = In.getStringOf1Length("Write a char");
+		char userChar = In.getChar("char:");
 		Print.str("\nCONTACTS BEGINNING BY " + userChar + "\n");
-		Print.mapContact(this.contactDao.getContactsBeginningByCharacter(userChar.charAt(0)));
+		Map<String, Contact> contacts = this.contactDao.getContactsBeginningByCharacter(userChar);
+		Print.mapContact(contacts);
 		Log.logger.info("FIND ALL CONTACTS BEGINNIG BY " + userChar);
 	}
 
 	@Override
 	public void filterByRelationship() {
-		Relationship relationship = Relationship.getRelationship("Choose a Relationship");
+		Relationship relationship = RelationshipForm.getRelationship();
 		Print.str("\nCONTACTS FROM RELANTIONSHIP " + relationship + "\n");
-		Print.mapContact(this.contactDao.getContactsWithRelationship(relationship));
+		Map<String, Contact> contacts = this.contactDao.getContactsWithRelationship(relationship);
+		Print.mapContact(contacts);
 		Log.logger.info("FIND ALL CONTACTS WITH RELATIONSHIP " + relationship);
 	}
 

@@ -20,10 +20,6 @@ public class ContactDao {
 		return contacts;
 	}
 
-	public boolean existContact(String name) {
-		return contacts.containsKey(name);
-	}
-
 	public Map<String, Contact> getContactsBeginningByCharacter(char character) {
 		Map<String, Contact> contactsBeginningByCharacter = new HashMap<String, Contact>();
 		char firstChar;
@@ -39,7 +35,8 @@ public class ContactDao {
 	public Map<String, Contact> getContactsWithRelationship(Relationship relationship) {
 		Map<String, Contact> contactsWithRelationsip = new HashMap<String, Contact>();
 		for (String key : contacts.keySet()) {
-			if (contacts.get(key).getRelationship().equals(relationship)) {
+			Relationship contactRelationship = contacts.get(key).getRelationship();
+			if (contactRelationship.equals(relationship)) {
 				contactsWithRelationsip.put(key, contacts.get(key));
 			}
 		}

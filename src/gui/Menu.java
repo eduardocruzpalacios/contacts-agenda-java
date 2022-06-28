@@ -14,8 +14,8 @@ public class Menu {
 		Print.str("5. Exit");
 	}
 
-	public static void relationshipListed() {
-		Print.header("RELATIONSHIP");
+	public static void relationship() {
+		Print.header("RELATIONSHIP MENU");
 		for (Relationship relationship : Relationship.BY_ID.values()) {
 			Print.enums(relationship);
 		}
