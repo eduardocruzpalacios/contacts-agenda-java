@@ -1,5 +1,7 @@
 package services;
 
+import java.util.Map;
+
 import dao.ContactDao;
 import form.ContactForm;
 import form.RelationshipForm;
@@ -24,7 +26,8 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void findAll() {
 		Print.str("\nALL CONTACTS\n");
-		Print.mapContact(this.contactDao.getAll());
+		Map<String, Contact> contacts = this.contactDao.getAll();
+		Print.mapContact(contacts);
 		Log.logger.info("FIND ALL CONTACTS");
 	}
 
