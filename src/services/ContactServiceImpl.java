@@ -2,6 +2,7 @@ package services;
 
 import dao.ContactDao;
 import form.ContactForm;
+import form.RelationshipForm;
 import model.Contact;
 import model.Relationship;
 import tools.In;
@@ -37,7 +38,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void filterByRelationship() {
-		Relationship relationship = Relationship.getRelationship("Choose a Relationship");
+		Relationship relationship = RelationshipForm.getRelationship();
 		Print.str("\nCONTACTS FROM RELANTIONSHIP " + relationship + "\n");
 		Print.mapContact(this.contactDao.getContactsWithRelationship(relationship));
 		Log.logger.info("FIND ALL CONTACTS WITH RELATIONSHIP " + relationship);

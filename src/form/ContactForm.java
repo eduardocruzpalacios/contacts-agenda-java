@@ -11,7 +11,7 @@ public class ContactForm {
 		Print.str("CONTACT FORM");
 		String name = In.getString("name:");
 		String phone = In.getString("phone:");
-		Relationship relationship = Relationship.getRelationship("Choose a Relationship");
+		Relationship relationship = RelationshipForm.getRelationship();
 		Contact contact = new Contact(name, phone, relationship);
 		return contact;
 	}
