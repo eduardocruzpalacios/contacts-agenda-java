@@ -1,6 +1,7 @@
 package services;
 
 import dao.ContactDao;
+import form.ContactForm;
 import model.Contact;
 import model.Relationship;
 import tools.In;
@@ -13,12 +14,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void create() {
-		Print.str("Let's create a new contact");
-		Contact contact = new Contact();
-		contact.setName(In.getString("Choose a name"));
-		contact.setPhone(In.getString("Write the phone"));
-		Relationship relationship = Relationship.getRelationship("Choose a Relationship");
-		contact.setRelationship(relationship);
+		Contact contact = ContactForm.getContact();
 		if (!this.contactDao.existContact(contact.getName())) {
 			this.contactDao.addContact(contact);
 			Print.str("Contact added successfully");
