@@ -4,16 +4,15 @@ Contacts agenda built with Java 11.
 ## Architecture
 |package|purpose|
 |----------------|-------------------------------|
-|model|offers a model for objects (attributes, constructors, getters, setters & .toString()) and includes an enum|
-|dao|guarantees the data persistence, including the CRUD operations|
+|model|models for objects (attributes, constructors, getters, setters & .toString()) and enums|
+|dao|methods to communicate with data source and perform the tasks demanded by the business logic|
+|form|methods to ask the user for data to instantiate objects|
 |services|interfaces with business-logic-oriented methods along with the classes implementing them|
 |control|the flow of the application and the execution class|
-|gui|the graphics|
-|tools|static methods for frequently needs as asking for a integer to the user|
-|exceptions|personalized exceptions|
+|gui|Graphic User Interface|
+|tools|methods for frequently needs|
 
 ## Functions
-Given an agenda with contacts:
  - List all contacts
  - Add a new contact
  - Filter contacts by first letter
@@ -21,7 +20,8 @@ Given an agenda with contacts:
  - Save changes in the agenda when closing the application
  - Load contacts on the agenda when starting the application
 
-Saving and loading operations work with a .txt file
+## Data Source
+A .txt file
 
 ## Data Structure
 |data|structure|
