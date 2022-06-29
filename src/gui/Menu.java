@@ -16,7 +16,7 @@ public class Menu {
 
 	public static void relationship() {
 		Print.header("RELATIONSHIP MENU");
-		for (Relationship relationship : Relationship.BY_ID.values()) {
+		for (Relationship relationship : Relationship.BY_NAME.values()) {
 			Print.enums(relationship);
 		}
 	}
