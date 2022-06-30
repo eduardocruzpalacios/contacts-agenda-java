@@ -12,7 +12,7 @@ public class RelationshipForm {
 		do {
 			Menu.relationship();
 			relationshipString = In.getString("Relationship:").toUpperCase();
-			for (Relationship relationship : Relationship.BY_ID.values()) {
+			for (Relationship relationship : Relationship.BY_NAME.values()) {
 				if (relationship.toString().equals(relationshipString)) {
 					exit = true;
 					break;

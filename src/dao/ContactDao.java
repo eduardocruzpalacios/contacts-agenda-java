@@ -10,17 +10,18 @@ import tools.File;
 public class ContactDao {
 
 	private static Map<String, Contact> contacts = new HashMap<String, Contact>();
-	final static private String FILE_PATH = "contacts.txt";
 
-	public void addContact(Contact contact) {
+	private static final String FILE_PATH = "contacts.txt";
+
+	public static void addContact(Contact contact) {
 		contacts.put(contact.getName(), contact);
 	}
 
-	public Map<String, Contact> getAll() {
+	public static Map<String, Contact> getAll() {
 		return contacts;
 	}
 
-	public Map<String, Contact> getContactsBeginningByCharacter(char character) {
+	public static Map<String, Contact> getContactsBeginningByCharacter(char character) {
 		Map<String, Contact> contactsBeginningByCharacter = new HashMap<String, Contact>();
 		char firstChar;
 		for (String key : contacts.keySet()) {
@@ -32,7 +33,7 @@ public class ContactDao {
 		return contactsBeginningByCharacter;
 	}
 
-	public Map<String, Contact> getContactsWithRelationship(Relationship relationship) {
+	public static Map<String, Contact> getContactsWithRelationship(Relationship relationship) {
 		Map<String, Contact> contactsWithRelationsip = new HashMap<String, Contact>();
 		for (String key : contacts.keySet()) {
 			Relationship contactRelationship = contacts.get(key).getRelationship();
@@ -43,11 +44,11 @@ public class ContactDao {
 		return contactsWithRelationsip;
 	}
 
-	public void loadAll() {
+	public static void loadAll() {
 		contacts = File.getMapContact(FILE_PATH);
 	}
 
-	public void saveAll() {
+	public static void saveAll() {
 		File.writeMapContact(contacts, FILE_PATH);
 	}
 
