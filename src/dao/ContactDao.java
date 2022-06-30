@@ -12,7 +12,7 @@ public class ContactDao {
 	private static Map<String, Contact> contacts = new HashMap<String, Contact>();
 	final static private String FILE_PATH = "contacts.txt";
 
-	public void addContact(Contact contact) {
+	public static void addContact(Contact contact) {
 		contacts.put(contact.getName(), contact);
 	}
 

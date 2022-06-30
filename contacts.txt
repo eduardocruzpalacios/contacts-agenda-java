@@ -11,3 +11,4 @@ edu,789,COLLEGE
 xxxxxx,xxxxxx,WORK
 TEST01,12345,SCHOOL
 name1,5555555,FAMILY
+zzzzzz,zzzzzzz,FRIEND

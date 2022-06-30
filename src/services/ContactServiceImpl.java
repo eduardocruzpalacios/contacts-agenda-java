@@ -18,7 +18,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void create() {
 		Contact contact = ContactForm.getContact();
-		this.contactDao.addContact(contact);
+		ContactDao.addContact(contact);
 		Print.str("Contact added successfully");
 		Log.logger.info("NEW CONTACT: " + contact);
 	}
