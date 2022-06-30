@@ -5,19 +5,13 @@ import java.util.Map;
 
 public enum Relationship {
 
-	FAMILY(1), FRIEND(2), SCHOOL(3), HIGH_SCHOOL(5), COLLEGE(6), WORK(7);
+	FAMILY(), FRIEND(), SCHOOL(), HIGH_SCHOOL(), COLLEGE(), WORK();
 
-	private final int id;
-
-	private Relationship(int id) {
-		this.id = id;
-	}
-
-	public static final Map<Integer, Relationship> BY_ID = new HashMap<>();
+	public static final Map<String, Relationship> BY_NAME = new HashMap<>();
 
 	static {
 		for (Relationship relationship : values()) {
-			BY_ID.put(relationship.id, relationship);
+			BY_NAME.put(relationship.toString(), relationship);
 		}
 	}
 

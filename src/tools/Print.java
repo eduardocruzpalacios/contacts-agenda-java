@@ -10,7 +10,7 @@ public class Print {
 		System.out.println(msg);
 	}
 
-	public static void enums(Enum<?> listed) {
+	public static void enumConstant(Enum<?> listed) {
 		System.out.println(listed);
 	}
 
