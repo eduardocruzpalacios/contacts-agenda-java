@@ -13,8 +13,6 @@ import tools.Print;
 
 public class ContactServiceImpl implements ContactService {
 
-	ContactDao contactDao = new ContactDao();
-
 	@Override
 	public void create() {
 		Contact contact = ContactForm.getContact();
