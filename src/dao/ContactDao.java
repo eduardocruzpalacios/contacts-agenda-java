@@ -32,7 +32,7 @@ public class ContactDao {
 		return contactsBeginningByCharacter;
 	}
 
-	public Map<String, Contact> getContactsWithRelationship(Relationship relationship) {
+	public static Map<String, Contact> getContactsWithRelationship(Relationship relationship) {
 		Map<String, Contact> contactsWithRelationsip = new HashMap<String, Contact>();
 		for (String key : contacts.keySet()) {
 			Relationship contactRelationship = contacts.get(key).getRelationship();
