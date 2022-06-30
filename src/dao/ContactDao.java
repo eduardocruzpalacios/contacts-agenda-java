@@ -10,7 +10,8 @@ import tools.File;
 public class ContactDao {
 
 	private static Map<String, Contact> contacts = new HashMap<String, Contact>();
-	final static private String FILE_PATH = "contacts.txt";
+
+	private static final String FILE_PATH = "contacts.txt";
 
 	public static void addContact(Contact contact) {
 		contacts.put(contact.getName(), contact);
