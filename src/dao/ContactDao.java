@@ -43,7 +43,7 @@ public class ContactDao {
 		return contactsWithRelationsip;
 	}
 
-	public void loadAll() {
+	public static void loadAll() {
 		contacts = File.getMapContact(FILE_PATH);
 	}
 

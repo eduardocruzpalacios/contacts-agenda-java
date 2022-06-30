@@ -51,7 +51,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void importAll() {
-		this.contactDao.loadAll();
+		ContactDao.loadAll();
 	}
 
 	@Override
