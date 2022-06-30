@@ -56,7 +56,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void exportAll() {
-		this.contactDao.saveAll();
+		ContactDao.saveAll();
 	}
 
 }
