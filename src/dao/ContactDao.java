@@ -20,7 +20,7 @@ public class ContactDao {
 		return contacts;
 	}
 
-	public Map<String, Contact> getContactsBeginningByCharacter(char character) {
+	public static Map<String, Contact> getContactsBeginningByCharacter(char character) {
 		Map<String, Contact> contactsBeginningByCharacter = new HashMap<String, Contact>();
 		char firstChar;
 		for (String key : contacts.keySet()) {
