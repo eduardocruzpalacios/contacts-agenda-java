@@ -26,7 +26,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void findAll() {
 		Print.str("\nALL CONTACTS\n");
-		Map<String, Contact> contacts = this.contactDao.getAll();
+		Map<String, Contact> contacts = ContactDao.getAll();
 		Print.mapContact(contacts);
 		Log.logger.info("FIND ALL CONTACTS");
 	}

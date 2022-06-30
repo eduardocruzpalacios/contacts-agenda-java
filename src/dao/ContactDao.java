@@ -16,7 +16,7 @@ public class ContactDao {
 		contacts.put(contact.getName(), contact);
 	}
 
-	public Map<String, Contact> getAll() {
+	public static Map<String, Contact> getAll() {
 		return contacts;
 	}
 
