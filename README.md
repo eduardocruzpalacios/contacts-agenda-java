@@ -30,6 +30,10 @@ A .txt file
 |Contact|String name, String phone, Relationship relationship|
 |Relationship|enum|
 
+## Testing
+- Unit tests are made with JUnit 5
+- Only model classes are tested
+
 ## Libs
  - Log4j-api-2.7.jar
  - Log4j-core-2.7.jar
