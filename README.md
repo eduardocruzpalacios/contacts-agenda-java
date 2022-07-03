@@ -1,5 +1,5 @@
 # Contacts Agenda
-Contacts agenda built with Java 11.
+Contacts agenda built with JDK 11.0.12.
 
 ## Architecture
 |package|purpose|
