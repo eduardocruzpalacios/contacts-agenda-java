@@ -1,4 +1,4 @@
-package form;
+package view;
 
 import model.Contact;
 import model.Relationship;

@@ -3,13 +3,13 @@ package services;
 import java.util.Map;
 
 import dao.ContactDao;
-import form.ContactForm;
-import form.RelationshipForm;
 import model.Contact;
 import model.Relationship;
 import tools.In;
 import tools.Log;
 import tools.Print;
+import view.ContactForm;
+import view.RelationshipForm;
 
 public class ContactServiceImpl implements ContactService {
 
