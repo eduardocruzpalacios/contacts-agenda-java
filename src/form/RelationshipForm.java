@@ -1,8 +1,8 @@
 package form;
 
-import gui.Menu;
 import model.Relationship;
 import tools.In;
+import view.Menu;
 
 public class RelationshipForm {
 

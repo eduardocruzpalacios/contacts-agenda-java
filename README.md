@@ -9,7 +9,7 @@ Contacts agenda built with JDK 11.0.12.
 |form|methods to ask the user for data to instantiate objects|
 |services|interfaces with business-logic-oriented methods along with the classes implementing them|
 |control|the flow of the application and the execution class|
-|gui|Graphic User Interface|
+|view|Graphic User Interface|
 |tools|methods for frequently needs|
 
 ## Functions

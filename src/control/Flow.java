@@ -1,10 +1,10 @@
 package control;
 
-import gui.Menu;
-import gui.Window;
 import services.ContactServiceImpl;
 import tools.In;
 import tools.Log;
+import view.Menu;
+import view.Window;
 
 public class Flow {
 
