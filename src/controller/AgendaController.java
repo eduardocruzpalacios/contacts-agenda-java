@@ -1,15 +1,15 @@
-package control;
+package controller;
 
-import gui.Menu;
-import gui.Window;
-import services.ContactServiceImpl;
-import tools.In;
-import tools.Log;
+import service.ContactServiceImpl;
+import utility.Log;
+import view.DataForm;
+import view.Menu;
+import view.Window;
 
-public class Flow {
+public class AgendaController {
 
-	public static void exe() {
-		Log.logger.info("APPLICATION STARTED");
+	public static void run() {
+		Log.info("APPLICATION STARTED");
 		Window.start();
 		ContactServiceImpl contactServiceImpl = new ContactServiceImpl();
 		contactServiceImpl.importAll();
@@ -17,7 +17,7 @@ public class Flow {
 		int option = 0;
 		do {
 			Menu.main();
-			option = In.getIntBetween(1, 5, "Choose an option");
+			option = DataForm.getIntBetween(1, 5, "Choose an option");
 			switch (option) {
 			case 1:
 				contactServiceImpl.create();
@@ -36,7 +36,7 @@ public class Flow {
 				break;
 			}
 		} while (!exit);
-		In.closeScanner();
+		DataForm.closeScanner();
 		contactServiceImpl.exportAll();
 		Window.exit();
 	}

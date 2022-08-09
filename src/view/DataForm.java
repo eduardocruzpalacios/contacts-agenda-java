@@ -1,13 +1,13 @@
-package tools;
+package view;
 
 import java.util.Scanner;
 
-public class In {
+public class DataForm {
 
 	private static Scanner scanner;
 
 	public static String getString(String msg) {
-		Print.str(msg);
+		PrintData.str(msg);
 		scanner = new Scanner(System.in);
 		return scanner.nextLine();
 	}
@@ -30,7 +30,7 @@ public class In {
 		int getInt;
 		scanner = new Scanner(System.in);
 		while (scanner.hasNextInt() == false) {
-			Print.str(msg);
+			PrintData.str(msg);
 			scanner.next();
 		}
 		getInt = scanner.nextInt();
@@ -41,7 +41,7 @@ public class In {
 		boolean exit = false;
 		int getIntBetween = 0;
 		while (!exit) {
-			getIntBetween = In.getInt(msg);
+			getIntBetween = DataForm.getInt(msg);
 			if (getIntBetween >= num1 && getIntBetween <= num2) {
 				exit = true;
 			}
