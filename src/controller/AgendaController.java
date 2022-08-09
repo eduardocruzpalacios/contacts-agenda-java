@@ -8,7 +8,7 @@ import view.Window;
 
 public class AgendaController {
 
-	public static void exe() {
+	public static void run() {
 		Log.logger.info("APPLICATION STARTED");
 		Window.start();
 		ContactServiceImpl contactServiceImpl = new ContactServiceImpl();
