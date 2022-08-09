@@ -1,8 +1,8 @@
 package controller;
 
 import service.ContactServiceImpl;
-import tools.In;
-import tools.Log;
+import utility.In;
+import utility.Log;
 import view.Menu;
 import view.Window;
 

@@ -1,6 +1,6 @@
 package view;
 
-import tools.Print;
+import utility.Print;
 
 public class Window {
 

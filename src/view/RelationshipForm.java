@@ -1,7 +1,7 @@
 package view;
 
 import model.Relationship;
-import tools.In;
+import utility.In;
 
 public class RelationshipForm {
 

@@ -10,7 +10,7 @@ Contacts agenda built with JDK 11.0.12.
 |service|interfaces with business-logic-oriented methods along with the classes implementing them|
 |controller|the flow of the application and the execution class|
 |view|Graphic User Interface|
-|tools|methods for frequently needs|
+|utility|methods for frequently needs|
 
 ## Functions
  - List all contacts

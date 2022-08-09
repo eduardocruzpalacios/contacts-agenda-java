@@ -2,8 +2,8 @@ package view;
 
 import model.Contact;
 import model.Relationship;
-import tools.In;
-import tools.Print;
+import utility.In;
+import utility.Print;
 
 public class ContactForm {
 

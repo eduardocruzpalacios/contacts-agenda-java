@@ -5,7 +5,7 @@ import java.util.Map;
 
 import model.Contact;
 import model.Relationship;
-import tools.File;
+import utility.File;
 
 public class ContactDao {
 

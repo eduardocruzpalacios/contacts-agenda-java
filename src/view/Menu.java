@@ -1,7 +1,7 @@
 package view;
 
 import model.Relationship;
-import tools.Print;
+import utility.Print;
 
 public class Menu {
 
