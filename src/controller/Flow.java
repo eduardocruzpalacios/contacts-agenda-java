@@ -1,6 +1,6 @@
 package controller;
 
-import services.ContactServiceImpl;
+import service.ContactServiceImpl;
 import tools.In;
 import tools.Log;
 import view.Menu;
