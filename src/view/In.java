@@ -1,8 +1,6 @@
-package utility;
+package view;
 
 import java.util.Scanner;
-
-import view.PrintData;
 
 public class In {
 

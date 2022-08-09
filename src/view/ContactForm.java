@@ -2,7 +2,6 @@ package view;
 
 import model.Contact;
 import model.Relationship;
-import utility.In;
 
 public class ContactForm {
 

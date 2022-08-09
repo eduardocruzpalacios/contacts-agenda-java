@@ -5,9 +5,9 @@ import java.util.Map;
 import dao.ContactDao;
 import model.Contact;
 import model.Relationship;
-import utility.In;
 import utility.Log;
 import view.ContactForm;
+import view.In;
 import view.PrintData;
 import view.RelationshipForm;
 
