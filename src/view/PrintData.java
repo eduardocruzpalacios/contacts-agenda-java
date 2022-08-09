@@ -1,10 +1,10 @@
-package utility;
+package view;
 
 import java.util.Map;
 
 import model.Contact;
 
-public class Print {
+public class PrintData {
 
 	public static void str(String msg) {
 		System.out.println(msg);
@@ -19,7 +19,7 @@ public class Print {
 	}
 
 	public static void header(String header) {
-		Print.str("\n***** " + header + " *****\n");
+		PrintData.str("\n***** " + header + " *****\n");
 	}
 
 }

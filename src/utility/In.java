@@ -2,12 +2,14 @@ package utility;
 
 import java.util.Scanner;
 
+import view.PrintData;
+
 public class In {
 
 	private static Scanner scanner;
 
 	public static String getString(String msg) {
-		Print.str(msg);
+		PrintData.str(msg);
 		scanner = new Scanner(System.in);
 		return scanner.nextLine();
 	}
@@ -30,7 +32,7 @@ public class In {
 		int getInt;
 		scanner = new Scanner(System.in);
 		while (scanner.hasNextInt() == false) {
-			Print.str(msg);
+			PrintData.str(msg);
 			scanner.next();
 		}
 		getInt = scanner.nextInt();
