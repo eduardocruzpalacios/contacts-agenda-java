@@ -7,6 +7,14 @@ import controller.AgendaController;
 
 public class Log {
 
-	public static Logger logger = LogManager.getLogger(AgendaController.class);
+	private static Logger logger = LogManager.getLogger(AgendaController.class);
+
+	public static void error(Exception e) {
+		logger.error(e);
+	}
+
+	public static void info(String information) {
+		logger.info(information);
+	}
 
 }

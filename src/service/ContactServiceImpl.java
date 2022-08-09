@@ -18,7 +18,7 @@ public class ContactServiceImpl implements ContactService {
 		Contact contact = ContactForm.getContact();
 		ContactDao.addContact(contact);
 		PrintData.str("Contact added successfully");
-		Log.logger.info("NEW CONTACT: " + contact);
+		Log.info("NEW CONTACT: " + contact);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class ContactServiceImpl implements ContactService {
 		PrintData.str("\nALL CONTACTS\n");
 		Map<String, Contact> contacts = ContactDao.getAll();
 		PrintData.mapContact(contacts);
-		Log.logger.info("FIND ALL CONTACTS");
+		Log.info("FIND ALL CONTACTS");
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class ContactServiceImpl implements ContactService {
 		PrintData.str("\nCONTACTS BEGINNING BY " + userChar + "\n");
 		Map<String, Contact> contacts = ContactDao.getContactsBeginningByCharacter(userChar);
 		PrintData.mapContact(contacts);
-		Log.logger.info("FIND ALL CONTACTS BEGINNIG BY " + userChar);
+		Log.info("FIND ALL CONTACTS BEGINNIG BY " + userChar);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class ContactServiceImpl implements ContactService {
 		PrintData.str("\nCONTACTS FROM RELANTIONSHIP " + relationship + "\n");
 		Map<String, Contact> contacts = ContactDao.getContactsWithRelationship(relationship);
 		PrintData.mapContact(contacts);
-		Log.logger.info("FIND ALL CONTACTS WITH RELATIONSHIP " + relationship);
+		Log.info("FIND ALL CONTACTS WITH RELATIONSHIP " + relationship);
 	}
 
 	@Override

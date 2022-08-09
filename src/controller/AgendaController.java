@@ -9,7 +9,7 @@ import view.Window;
 public class AgendaController {
 
 	public static void run() {
-		Log.logger.info("APPLICATION STARTED");
+		Log.info("APPLICATION STARTED");
 		Window.start();
 		ContactServiceImpl contactServiceImpl = new ContactServiceImpl();
 		contactServiceImpl.importAll();

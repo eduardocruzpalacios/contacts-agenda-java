@@ -30,7 +30,7 @@ public class File {
 			}
 			reader.close();
 		} catch (IOException e) {
-			Log.logger.error(e);
+			Log.error(e);
 		}
 		return contacts;
 	}
@@ -45,7 +45,7 @@ public class File {
 			}
 			writer.close();
 		} catch (IOException e) {
-			Log.logger.error(e);
+			Log.error(e);
 		}
 	}
 
