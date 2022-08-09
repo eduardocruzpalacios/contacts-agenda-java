@@ -6,7 +6,7 @@ import tools.Log;
 import view.Menu;
 import view.Window;
 
-public class Flow {
+public class AgendaController {
 
 	public static void exe() {
 		Log.logger.info("APPLICATION STARTED");

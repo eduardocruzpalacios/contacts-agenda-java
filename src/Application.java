@@ -1,9 +1,9 @@
-import controller.Flow;
+import controller.AgendaController;
 
 public class Application {
 
 	public static void main(String[] args) {
-		Flow.exe();
+		AgendaController.exe();
 	}
 
 }
