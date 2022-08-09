@@ -1,4 +1,4 @@
-import control.Flow;
+import controller.Flow;
 
 public class Application {
 

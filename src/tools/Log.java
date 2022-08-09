@@ -3,7 +3,7 @@ package tools;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import control.Flow;
+import controller.Flow;
 
 public class Log {
 

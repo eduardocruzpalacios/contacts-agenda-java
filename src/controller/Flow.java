@@ -1,4 +1,4 @@
-package control;
+package controller;
 
 import services.ContactServiceImpl;
 import tools.In;
