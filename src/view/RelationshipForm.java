@@ -1,8 +1,6 @@
-package form;
+package view;
 
-import gui.Menu;
 import model.Relationship;
-import tools.In;
 
 public class RelationshipForm {
 
@@ -11,7 +9,7 @@ public class RelationshipForm {
 		String relationshipString;
 		do {
 			Menu.relationship();
-			relationshipString = In.getString("Relationship:").toUpperCase();
+			relationshipString = DataForm.getString("Relationship:").toUpperCase();
 			for (Relationship relationship : Relationship.BY_NAME.values()) {
 				if (relationship.toString().equals(relationshipString)) {
 					exit = true;
