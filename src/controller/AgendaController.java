@@ -2,7 +2,7 @@ package controller;
 
 import service.ContactServiceImpl;
 import utility.Log;
-import view.In;
+import view.DataForm;
 import view.Menu;
 import view.Window;
 
@@ -17,7 +17,7 @@ public class AgendaController {
 		int option = 0;
 		do {
 			Menu.main();
-			option = In.getIntBetween(1, 5, "Choose an option");
+			option = DataForm.getIntBetween(1, 5, "Choose an option");
 			switch (option) {
 			case 1:
 				contactServiceImpl.create();
@@ -36,7 +36,7 @@ public class AgendaController {
 				break;
 			}
 		} while (!exit);
-		In.closeScanner();
+		DataForm.closeScanner();
 		contactServiceImpl.exportAll();
 		Window.exit();
 	}

@@ -7,7 +7,7 @@ import model.Contact;
 import model.Relationship;
 import utility.Log;
 import view.ContactForm;
-import view.In;
+import view.DataForm;
 import view.PrintData;
 import view.RelationshipForm;
 
@@ -31,7 +31,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Override
 	public void filterByFirstLetter() {
-		char userChar = In.getChar("char:");
+		char userChar = DataForm.getChar("char:");
 		PrintData.str("\nCONTACTS BEGINNING BY " + userChar + "\n");
 		Map<String, Contact> contacts = ContactDao.getContactsBeginningByCharacter(userChar);
 		PrintData.mapContact(contacts);
