@@ -1,9 +1,9 @@
-import controller.AgendaController;
+import controller.ContactsAgendaController;
 
 public class Application {
 
 	public static void main(String[] args) {
-		AgendaController.run();
+		ContactsAgendaController.run();
 	}
 
 }
