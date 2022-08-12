@@ -1,6 +1,6 @@
 import controller.ContactsAgendaController;
 
-public class Application {
+public class ContactsAgendaApplication {
 
 	public static void main(String[] args) {
 		ContactsAgendaController.run();
