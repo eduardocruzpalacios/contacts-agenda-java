@@ -6,7 +6,7 @@ import view.DataForm;
 import view.Menu;
 import view.Window;
 
-public class AgendaController {
+public class ContactsAgendaController {
 
 	public static void run() {
 		Log.info("APPLICATION STARTED");
