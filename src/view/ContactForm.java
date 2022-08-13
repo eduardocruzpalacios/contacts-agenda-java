@@ -6,7 +6,7 @@ import model.Relationship;
 public class ContactForm {
 
 	public static Contact getContact() {
-		PrintData.str("CONTACT FORM");
+		PrintData.string("CONTACT FORM");
 		String name = DataForm.getString("name:");
 		String phone = DataForm.getString("phone:");
 		Relationship relationship = RelationshipForm.getRelationship();
