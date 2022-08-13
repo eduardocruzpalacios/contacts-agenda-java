@@ -35,7 +35,7 @@ public class File {
 		return contacts;
 	}
 
-	public static void writeMapContact(Map<String, Contact> contacts, String path) {
+	public static void writeContactsInFile(Map<String, Contact> contacts, String path) {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(path));
 			for (Object object : contacts.keySet()) {

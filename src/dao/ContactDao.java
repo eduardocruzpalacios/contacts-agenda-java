@@ -49,7 +49,7 @@ public class ContactDao {
 	}
 
 	public static void saveAll() {
-		File.writeMapContact(contacts, FILE_PATH);
+		File.writeContactsInFile(contacts, FILE_PATH);
 	}
 
 }
