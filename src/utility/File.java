@@ -13,19 +13,19 @@ import model.Relationship;
 
 public class File {
 
-	public static Map<String, Contact> getMapContact(String path) {
+	public static Map<String, Contact> getContactsFromFile(String filePath) {
 		Map<String, Contact> contacts = new HashMap<String, Contact>();
 		String fileLine;
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(path));
+			BufferedReader reader = new BufferedReader(new FileReader(filePath));
 			while ((fileLine = reader.readLine()) != null) {
-				Contact contact = new Contact();
+
 				String[] contactAttribute = new String[3];
 				contactAttribute = fileLine.split(",");
-				contact.setName(contactAttribute[0]);
-				contact.setPhone(contactAttribute[1]);
+				String name = contactAttribute[0];
+				String phone = contactAttribute[1];
 				Relationship relationship = Relationship.valueOf(contactAttribute[2]);
-				contact.setRelationship(relationship);
+				Contact contact = new Contact(name, phone, relationship);
 				contacts.put(contact.getName(), contact);
 			}
 			reader.close();

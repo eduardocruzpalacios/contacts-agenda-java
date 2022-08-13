@@ -45,7 +45,7 @@ public class ContactDao {
 	}
 
 	public static void loadAll() {
-		contacts = File.getMapContact(FILE_PATH);
+		contacts = File.getContactsFromFile(FILE_PATH);
 	}
 
 	public static void saveAll() {
