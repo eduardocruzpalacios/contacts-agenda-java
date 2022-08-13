@@ -16,7 +16,7 @@ public class Menu {
 	public static void relationship() {
 		PrintData.header("RELATIONSHIP MENU");
 		for (Relationship relationship : Relationship.BY_NAME.values()) {
-			PrintData.enumConstant(relationship);
+			PrintData.enumValue(relationship);
 		}
 	}
 

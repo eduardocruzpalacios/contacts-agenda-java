@@ -10,8 +10,8 @@ public class PrintData {
 		System.out.println(message);
 	}
 
-	public static void enumConstant(Enum<?> listed) {
-		System.out.println(listed);
+	public static void enumValue(Enum<?> enumValue) {
+		System.out.println(enumValue);
 	}
 
 	public static void mapContact(Map<String, Contact> map) {
