@@ -26,7 +26,7 @@ public class DataForm {
 	}
 
 	public static int getInt(String message) {
-		System.out.println(message);
+		PrintData.string(message);
 		int getInt;
 		scanner = new Scanner(System.in);
 		while (scanner.hasNextInt() == false) {
