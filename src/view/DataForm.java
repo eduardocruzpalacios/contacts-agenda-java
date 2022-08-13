@@ -6,31 +6,31 @@ public class DataForm {
 
 	private static Scanner scanner;
 
-	public static String getString(String msg) {
-		PrintData.string(msg);
+	public static String getString(String message) {
+		PrintData.string(message);
 		scanner = new Scanner(System.in);
 		return scanner.nextLine();
 	}
 
-	private static String getStringOf1Length(String msg) {
+	private static String getStringOf1Length(String message) {
 		String getStringOf1Length;
 		do {
-			getStringOf1Length = getString(msg);
+			getStringOf1Length = getString(message);
 		} while (getStringOf1Length.length() != 1);
 		return getStringOf1Length;
 	}
 
-	public static char getChar(String msg) {
-		String string = getStringOf1Length(msg);
+	public static char getChar(String message) {
+		String string = getStringOf1Length(message);
 		return string.charAt(0);
 	}
 
-	public static int getInt(String msg) {
-		System.out.println(msg);
+	public static int getInt(String message) {
+		System.out.println(message);
 		int getInt;
 		scanner = new Scanner(System.in);
 		while (scanner.hasNextInt() == false) {
-			PrintData.string(msg);
+			PrintData.string(message);
 			scanner.next();
 		}
 		getInt = scanner.nextInt();
