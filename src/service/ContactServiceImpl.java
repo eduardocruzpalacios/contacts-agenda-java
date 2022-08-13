@@ -17,13 +17,13 @@ public class ContactServiceImpl implements ContactService {
 	public void create() {
 		Contact contact = ContactForm.getContact();
 		ContactDao.addContact(contact);
-		PrintData.str("Contact added successfully");
+		PrintData.string("Contact added successfully");
 		Log.info("NEW CONTACT: " + contact);
 	}
 
 	@Override
 	public void findAll() {
-		PrintData.str("\nALL CONTACTS\n");
+		PrintData.string("\nALL CONTACTS\n");
 		Map<String, Contact> contacts = ContactDao.getAll();
 		PrintData.mapContact(contacts);
 		Log.info("FIND ALL CONTACTS");
@@ -32,7 +32,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void filterByFirstLetter() {
 		char userChar = DataForm.getChar("char:");
-		PrintData.str("\nCONTACTS BEGINNING BY " + userChar + "\n");
+		PrintData.string("\nCONTACTS BEGINNING BY " + userChar + "\n");
 		Map<String, Contact> contacts = ContactDao.getContactsBeginningByCharacter(userChar);
 		PrintData.mapContact(contacts);
 		Log.info("FIND ALL CONTACTS BEGINNIG BY " + userChar);
@@ -41,7 +41,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void filterByRelationship() {
 		Relationship relationship = RelationshipForm.getRelationship();
-		PrintData.str("\nCONTACTS FROM RELANTIONSHIP " + relationship + "\n");
+		PrintData.string("\nCONTACTS FROM RELANTIONSHIP " + relationship + "\n");
 		Map<String, Contact> contacts = ContactDao.getContactsWithRelationship(relationship);
 		PrintData.mapContact(contacts);
 		Log.info("FIND ALL CONTACTS WITH RELATIONSHIP " + relationship);

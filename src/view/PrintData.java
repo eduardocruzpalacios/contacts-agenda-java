@@ -6,7 +6,7 @@ import model.Contact;
 
 public class PrintData {
 
-	public static void str(String message) {
+	public static void string(String message) {
 		System.out.println(message);
 	}
 
@@ -19,7 +19,7 @@ public class PrintData {
 	}
 
 	public static void header(String header) {
-		PrintData.str("\n***** " + header + " *****\n");
+		PrintData.string("\n***** " + header + " *****\n");
 	}
 
 }

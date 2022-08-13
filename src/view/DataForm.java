@@ -7,7 +7,7 @@ public class DataForm {
 	private static Scanner scanner;
 
 	public static String getString(String msg) {
-		PrintData.str(msg);
+		PrintData.string(msg);
 		scanner = new Scanner(System.in);
 		return scanner.nextLine();
 	}
@@ -30,7 +30,7 @@ public class DataForm {
 		int getInt;
 		scanner = new Scanner(System.in);
 		while (scanner.hasNextInt() == false) {
-			PrintData.str(msg);
+			PrintData.string(msg);
 			scanner.next();
 		}
 		getInt = scanner.nextInt();
