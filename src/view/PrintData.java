@@ -14,8 +14,8 @@ public class PrintData {
 		System.out.println(enumValue);
 	}
 
-	public static void mapContact(Map<String, Contact> map) {
-		map.forEach((String, Contact) -> System.out.println(Contact));
+	public static void contacts(Map<String, Contact> contacts) {
+		contacts.forEach((key, value) -> System.out.println(value));
 	}
 
 	public static void header(String header) {

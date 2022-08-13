@@ -25,7 +25,7 @@ public class ContactServiceImpl implements ContactService {
 	public void findAll() {
 		PrintData.string("\nALL CONTACTS\n");
 		Map<String, Contact> contacts = ContactDao.getAll();
-		PrintData.mapContact(contacts);
+		PrintData.contacts(contacts);
 		Log.info("FIND ALL CONTACTS");
 	}
 
@@ -34,7 +34,7 @@ public class ContactServiceImpl implements ContactService {
 		char userChar = DataForm.getChar("char:");
 		PrintData.string("\nCONTACTS BEGINNING BY " + userChar + "\n");
 		Map<String, Contact> contacts = ContactDao.getContactsBeginningByCharacter(userChar);
-		PrintData.mapContact(contacts);
+		PrintData.contacts(contacts);
 		Log.info("FIND ALL CONTACTS BEGINNIG BY " + userChar);
 	}
 
@@ -43,7 +43,7 @@ public class ContactServiceImpl implements ContactService {
 		Relationship relationship = RelationshipForm.getRelationship();
 		PrintData.string("\nCONTACTS FROM RELANTIONSHIP " + relationship + "\n");
 		Map<String, Contact> contacts = ContactDao.getContactsWithRelationship(relationship);
-		PrintData.mapContact(contacts);
+		PrintData.contacts(contacts);
 		Log.info("FIND ALL CONTACTS WITH RELATIONSHIP " + relationship);
 	}
 
