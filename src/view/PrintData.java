@@ -6,8 +6,8 @@ import model.Contact;
 
 public class PrintData {
 
-	public static void str(String msg) {
-		System.out.println(msg);
+	public static void str(String message) {
+		System.out.println(message);
 	}
 
 	public static void enumConstant(Enum<?> listed) {
