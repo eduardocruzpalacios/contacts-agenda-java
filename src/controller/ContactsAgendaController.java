@@ -8,10 +8,11 @@ import view.Window;
 
 public class ContactsAgendaController {
 
-	public static void run() {
+	private ContactServiceImpl contactServiceImpl = new ContactServiceImpl();
+
+	public void run() {
 		Log.info("APPLICATION STARTED");
 		Window.start();
-		ContactServiceImpl contactServiceImpl = new ContactServiceImpl();
 		contactServiceImpl.importAll();
 		boolean exit = false;
 		int option = 0;

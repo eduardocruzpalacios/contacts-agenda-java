@@ -44,8 +44,8 @@ public class ContactServiceImpl implements ContactService {
 	public void filterByRelationship() {
 		Relationship relationship = RelationshipForm.getRelationship();
 		PrintData.string("\nCONTACTS FROM RELANTIONSHIP " + relationship + "\n");
-		Map<String, Contact> contacts = contactDao.getContactsWithRelationship(relationship);
-		PrintData.contacts(contacts);
+		Map<String, Contact> contactsFilteredByRelationship = contactDao.getContactsWithRelationship(relationship);
+		PrintData.contacts(contactsFilteredByRelationship);
 		Log.info("FIND ALL CONTACTS WITH RELATIONSHIP " + relationship);
 	}
 
