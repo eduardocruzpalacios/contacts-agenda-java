@@ -13,10 +13,12 @@ import view.RelationshipForm;
 
 public class ContactServiceImpl implements ContactService {
 
+	private ContactDao contactDao = new ContactDao();
+
 	@Override
 	public void create() {
 		Contact contact = ContactForm.getContact();
-		ContactDao.addContact(contact);
+		contactDao.addContact(contact);
 		PrintData.string("Contact added successfully");
 		Log.info("NEW CONTACT: " + contact);
 	}
@@ -24,7 +26,7 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public void findAll() {
 		PrintData.string("\nALL CONTACTS\n");
-		Map<String, Contact> contacts = ContactDao.getAll();
+		Map<String, Contact> contacts = contactDao.getAll();
 		PrintData.contacts(contacts);
 		Log.info("FIND ALL CONTACTS");
 	}
@@ -33,7 +35,7 @@ public class ContactServiceImpl implements ContactService {
 	public void filterByFirstLetter() {
 		char userChar = DataForm.getChar("char:");
 		PrintData.string("\nCONTACTS BEGINNING BY " + userChar + "\n");
-		Map<String, Contact> contacts = ContactDao.getContactsBeginningByCharacter(userChar);
+		Map<String, Contact> contacts = contactDao.getContactsBeginningByCharacter(userChar);
 		PrintData.contacts(contacts);
 		Log.info("FIND ALL CONTACTS BEGINNIG BY " + userChar);
 	}
@@ -42,19 +44,19 @@ public class ContactServiceImpl implements ContactService {
 	public void filterByRelationship() {
 		Relationship relationship = RelationshipForm.getRelationship();
 		PrintData.string("\nCONTACTS FROM RELANTIONSHIP " + relationship + "\n");
-		Map<String, Contact> contacts = ContactDao.getContactsWithRelationship(relationship);
+		Map<String, Contact> contacts = contactDao.getContactsWithRelationship(relationship);
 		PrintData.contacts(contacts);
 		Log.info("FIND ALL CONTACTS WITH RELATIONSHIP " + relationship);
 	}
 
 	@Override
 	public void importAll() {
-		ContactDao.loadAll();
+		contactDao.loadAll();
 	}
 
 	@Override
 	public void exportAll() {
-		ContactDao.saveAll();
+		contactDao.saveAll();
 	}
 
 }

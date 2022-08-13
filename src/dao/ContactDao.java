@@ -9,19 +9,19 @@ import utility.File;
 
 public class ContactDao {
 
-	private static Map<String, Contact> contacts = new HashMap<String, Contact>();
+	private Map<String, Contact> contacts = new HashMap<String, Contact>();
 
-	private static final String FILE_PATH = "contacts.txt";
+	private final String FILE_PATH = "contacts.txt";
 
-	public static void addContact(Contact contact) {
+	public  void addContact(Contact contact) {
 		contacts.put(contact.getName(), contact);
 	}
 
-	public static Map<String, Contact> getAll() {
+	public Map<String, Contact> getAll() {
 		return contacts;
 	}
 
-	public static Map<String, Contact> getContactsBeginningByCharacter(char character) {
+	public Map<String, Contact> getContactsBeginningByCharacter(char character) {
 		Map<String, Contact> contactsBeginningByCharacter = new HashMap<String, Contact>();
 		char firstChar;
 		for (String key : contacts.keySet()) {
@@ -33,7 +33,7 @@ public class ContactDao {
 		return contactsBeginningByCharacter;
 	}
 
-	public static Map<String, Contact> getContactsWithRelationship(Relationship relationship) {
+	public Map<String, Contact> getContactsWithRelationship(Relationship relationship) {
 		Map<String, Contact> contactsWithRelationsip = new HashMap<String, Contact>();
 		for (String key : contacts.keySet()) {
 			Relationship contactRelationship = contacts.get(key).getRelationship();
@@ -44,11 +44,11 @@ public class ContactDao {
 		return contactsWithRelationsip;
 	}
 
-	public static void loadAll() {
+	public void loadAll() {
 		contacts = File.getContactsFromFile(FILE_PATH);
 	}
 
-	public static void saveAll() {
+	public void saveAll() {
 		File.writeContactsInFile(contacts, FILE_PATH);
 	}
 
