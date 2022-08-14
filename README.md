@@ -25,9 +25,9 @@ A .txt file
 ## Data Structure
 |data|structure|
 |----------------|-------------------------------|
-|Agenda|HashMap<String, Contact>|
 |Contact|String name, String phone, Relationship relationship|
 |Relationship|enum|
+|ContactDao|HashMap<String, Contact>|
 
 ## Testing
 - Unit tests are made with JUnit 5
