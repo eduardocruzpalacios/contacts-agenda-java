@@ -12,15 +12,16 @@ Contacts agenda console application built with JDK 11.0.12.
 |utility|methods for frequently needs|
 
 ## Functions
- - List all contacts
- - Add a new contact
- - Filter contacts by first letter
- - Filter contacts by relationship
- - Save changes in the agenda when closing the application
- - Load contacts on the agenda when starting the application
+### Contacts
+- Import all when starting the application
+- Export all when exiting the application
+- Create one
+- Read and print all
+- Filter by first letter and print them
+- Filter by relationship and print them
 
 ## Data Source
-A .txt file
+A .txt file.
 
 ## Data Structure
 |data|structure|
